@@ -1,7 +1,8 @@
+// Login.js
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // ⬅️ add Link
 import './Auth.css';
 
 export default function Login() {
@@ -28,6 +29,9 @@ export default function Login() {
         <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
         <button type="submit">Login</button>
       </form>
+      <p>
+        Don't have an account? <Link to="/signup">Sign up</Link>
+      </p>
     </div>
   );
 }
